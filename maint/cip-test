@@ -1,6 +1,8 @@
 #!/bin/bash
-
 set -ex
+
+# temp for t/zmq.t. DO NOT MERGE
+cpanm -v AnyEvent EV
 
 make
 make test TEST_VERBOSE=1
