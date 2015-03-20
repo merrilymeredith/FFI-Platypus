@@ -2,7 +2,7 @@
 set -ex
 
 # temp for t/zmq.t. DO NOT MERGE
-cpanm -v AnyEvent EV
+cpanm -v AnyEvent EV ZMQ::FFI
 
 make
 make test TEST_VERBOSE=1
