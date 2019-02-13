@@ -1,4 +1,7 @@
 #include "libtest.h"
+#ifdef HAVE_MATH_H
+#include <math.h>
+#endif
 
 EXTERN float
 float_add(float a, float b)
@@ -68,4 +71,19 @@ EXTERN float
 float_call_closure(float value)
 {
   return my_closure(value);
+}
+
+EXTERN int
+float_is_4_2(float value)
+{
+  int ok = fabsf(4.2-value) < 0.001;
+  return ok;
+}
+
+EXTERN const char *
+float_is_4_2_diag(float value)
+{
+  static char buffer[1024];
+  sprintf(buffer, "value = %f\noff by %f", value, fabs(4.2-value));
+  return buffer;
 }

@@ -76,4 +76,10 @@ subtest 'custom type output' => sub {
 $ffi->attach( [pointer_is_null => 'closure_pointer_is_null'] => ['()->void'] => 'int');
 is closure_pointer_is_null(), 1, 'closure_pointer_is_null() = 1';
 
+my $msg = $ffi->function( float_is_4_2_diag => ['float'] => 'string')->call(4.2e00);
+if(ok($ffi->function( float_is_4_2 => ['float'] => 'int')->call(4.2e00), "4.2 is aprox 4.2"))
+{ note $msg }
+else
+{ diag $msg }
+
 done_testing;

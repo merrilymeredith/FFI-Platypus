@@ -81,4 +81,7 @@ subtest 'custom type output' => sub {
 $ffi->attach( [pointer_is_null => 'closure_pointer_is_null'] => ['()->void'] => 'int');
 is closure_pointer_is_null(), 1, 'closure_pointer_is_null() = 1';
 
+ok($ffi->function( double_is_4_2 => ['double'] => 'int')->call(4.2e00), "4.2 is aprox 4.2")
+  || diag($ffi->function( double_is_4_2_diag => ['double'] => 'string')->call(4.2e00));
+
 done_testing;

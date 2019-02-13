@@ -4,6 +4,9 @@
  * all instances of "float" have been changed to "double"
  */
 #include "libtest.h"
+#ifdef HAVE_MATH_H
+#include <math.h>
+#endif
 
 EXTERN double
 double_add(double a, double b)
@@ -73,4 +76,19 @@ EXTERN double
 double_call_closure(double value)
 {
   return my_closure(value);
+}
+
+EXTERN int
+double_is_4_2(double value)
+{
+  int ok = fabsf(4.2-value) < 0.001;
+  return ok;
+}
+
+EXTERN const char *
+double_is_4_2_diag(double value)
+{
+  static char buffer[1024];
+  sprintf(buffer, "value = %f\noff by %f", value, fabs(4.2-value));
+  return buffer;
 }
