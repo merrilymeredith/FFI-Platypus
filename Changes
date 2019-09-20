@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Convert documentation from api => 0 (implicit) to api => 1 (explicit)
   - Improved documentation (gh#181, gh#184)
 
 0.97_03   2019-09-25 18:03:13 -0600
