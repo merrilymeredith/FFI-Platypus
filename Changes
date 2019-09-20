@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Improved documentation (gh#181, gh#184)
 
 0.97_03   2019-09-25 18:03:13 -0600
   - FFI::Platypus::Record has a record_layout_1 function which
