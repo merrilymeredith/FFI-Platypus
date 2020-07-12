@@ -650,6 +650,7 @@ sub template
 
 __DATA__
 #include <stdio.h>
+#include <stddef.h>
 ##HEADERS##
 ##DECL##
 
